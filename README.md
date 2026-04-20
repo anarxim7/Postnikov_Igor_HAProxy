@@ -1,24 +1,23 @@
 
 ### Задание 1
 
-Установите Zabbix Server с веб-интерфейсом.
+Создайте свой шаблон, в котором будут элементы данных, мониторящие загрузку CPU и RAM хоста.
+Процесс выполнения
 
-![1.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/1.png)
+    Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+    В веб-интерфейсе Zabbix Servera в разделе Templates создайте новый шаблон
+    Создайте Item который будет собирать информацию об загрузке CPU в процентах
+    Создайте Item который будет собирать информацию об загрузке RAM в процентах
+
+
+
+![3.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/3.png)
 
 ```
 Поле для вставки кода...
 ....
 ....
-apt install postgresql
-wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.4+debian13_all.deb
-dpkg -i zabbix-release_latest_7.4+debian13_all.deb
-apt update 
-apt install zabbix-server-pgsql zabbix-frontend-php php8.4-pgsql zabbix-apache-conf zabbix-sql-scripts
-sudo -u postgres createuser --pwprompt zabbix
-sudo -u postgres createdb -O zabbix zabbix 
-zcat /usr/share/zabbix/sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix 
-systemctl restart zabbix-server zabbix-agent apache2
-systemctl enable zabbix-server zabbix-agent apache2 
+
 ....
 ....
 ```
@@ -27,35 +26,75 @@ systemctl enable zabbix-server zabbix-agent apache2
 
 ### Задание 2
 
-Установите Zabbix Agent на два хоста.
+Добавьте в Zabbix два хоста и задайте им имена <фамилия и инициалы-1> и <фамилия и инициалы-2>. Например: ivanovii-1 и ivanovii-2.
+Процесс выполнения
+
+    Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+    Установите Zabbix Agent на 2 виртмашины, одной из них может быть ваш Zabbix Server
+    Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов
+    Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera
+    Прикрепите за каждым хостом шаблон Linux by Zabbix Agent
+    Проверьте что в разделе Latest Data начали появляться данные с добавленных агентов
+
 
 ```
 Поле для вставки кода...
 ....
 ....
-#На Zabbix server
-sudo apt install zabbix-agent
-sudo systemctl restart zabbix-agent
-sudo systemctl enable zabbix-agent 
-
-#На VM 
-sudo wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.4+debian13_all.deb
-sudo dpkg -i zabbix-release_latest_7.4+debian13_all.deb
-sudo apt update 
-sudo apt install zabbix-agent
-sudo nano /etc/zabbix/zabbix_agentd.conf
-# изменил
-#Server=192.168.31.167,192.168.56.0/24
-#ServerActive=192.168.56.1
-sudo systemctl restart zabbix-agent
-sudo systemctl enable zabbix-agent 
 
 ....
 ....
 ```
 
-![2.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/2.png)
-![2.1.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/2.1.png)
-![2.2.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/2.2.png)
-![2.3.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/2.3.png)
+---
+
+
+### Задание 3
+
+Привяжите созданный шаблон к двум хостам. Также привяжите к обоим хостам шаблон Linux by Zabbix Agent.
+Процесс выполнения
+
+    Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+    Зайдите в настройки каждого хоста и в разделе Templates прикрепите к этому хосту ваш шаблон
+    Так же к каждому хосту привяжите шаблон Linux by Zabbix Agent
+    Проверьте что в раздел Latest Data начали поступать необходимые данные из вашего шаблона
+
+
+
+```
+Поле для вставки кода...
+....
+....
+
+....
+....
+```
+
+![4.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/4.png)
+
+
+---
+
+
+### Задание 4
+
+Создайте свой кастомный дашборд.
+Процесс выполнения
+
+    Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+    В разделе Dashboards создайте новый дашборд
+    Разместите на нём несколько графиков на ваше усмотрение.
+
+
+
+```
+Поле для вставки кода...
+....
+....
+
+....
+....
+```
+
+![5.png](https://github.com/anarxim7/Zabbix-Postnikov-Igor/blob/main/img/5.png)
 
