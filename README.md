@@ -8,7 +8,7 @@
     На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
 
 
-![1.png](https://github.com/anarxim7/Postnikov_Igor-homework/blob/main/img/1.png)
+![1.png](https://github.com/anarxim7/Postnikov_Igor_HAProxy/blob/main/img/1.png)
 
 ```
 Поле для вставки кода...
@@ -39,5 +39,5 @@
 ....
 ```
 
-![2.png](https://github.com/anarxim7/Postnikov_Igor-homework/blob/main/img/2.png)
+![2.png](https://github.com/anarxim7/Postnikov_Igor_HAProxy/blob/main/img/2.png)
 
