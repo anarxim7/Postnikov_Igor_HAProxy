@@ -7,7 +7,7 @@
 
 #### Решение 1
 Файл [haproxy1](./haproxy/haproxy_1.cfg)
--
+----
 ![1.png](img/1.png)
 
 
@@ -21,6 +21,6 @@
 
 #### Решение 2
 Файл [haproxy2](./haproxy/haproxy_2.cfg)
--
+----
 ![2.png](img/2.png)
 
