@@ -6,7 +6,7 @@
 4. На проверку направьте конфигурационный файл HAProxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
 
 ### Решение 1
-![haproxy 1.cfg](haproxy/haproxy 1.cfg)
+![haproxy 1.cfg](./haproxy/haproxy 1.cfg)
 ![1.png](img/1.png)
 
 
@@ -19,6 +19,6 @@
 4. На проверку направьте конфигурационный файл HAProxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy с использованием домена example.local и без него.
 
 ### Решение 2
-![haproxy 2.cfg](haproxy/haproxy 2.cfg)
+![haproxy 2.cfg](./haproxy/haproxy 2.cfg)
 ![2.png](img/2.png)
 
